@@ -36,7 +36,7 @@ if __name__ == "__main__":
     for name in trendnames[0:3]:
         print(name)
 
-    query = f"{trendnames[2]} -is:retweet lang:de"
+    query = f"{trendnames[0]} -is:retweet lang:de"
     tweet_fields = "created_at,public_metrics,author_id" #,non_public_metrics,public_metrics,organic_metrics,promoted_metrics"
 
     response = client.search_recent_tweets(query=query, tweet_fields=tweet_fields, sort_order="relevancy", max_results=50)
@@ -45,6 +45,10 @@ if __name__ == "__main__":
     tweets.sort(key=like_count_of_tweet, reverse=True)
 
     embed_html_code = []
+
+    # Enable ads by Google Adsense
+    embed_html_code.append("""<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6045664421716768"
+     crossorigin="anonymous"></script></head>""")
 
     for t in tweets[0:10]:
         # Build the html code to embed a twitter post.
