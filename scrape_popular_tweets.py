@@ -47,8 +47,10 @@ if __name__ == "__main__":
     embed_html_code = []
 
     # Enable ads by Google Adsense
-    embed_html_code.append("""<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6045664421716768"
-     crossorigin="anonymous"></script></head>""")
+    embed_html_code.append("""<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6045664421716768"
+     crossorigin="anonymous">
+    </script></head>""")
 
     for t in tweets[0:10]:
         # Build the html code to embed a twitter post.
@@ -71,7 +73,7 @@ if __name__ == "__main__":
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br><br>
         """)
 
-    with open("index.html", 'w', encoding="utf-8") as html_file:
+    with open("index2.html", 'w', encoding="utf-8") as html_file:
         for entry in embed_html_code:
             html_file.write(entry)
     
